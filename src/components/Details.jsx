@@ -1,10 +1,34 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const singleData = useLoaderData();
 //   console.log(singleData);
+  const { _id, name, brand, type, image, price, description, rating } = singleData || {};
 
-  const { _id, name, brand, type, image, price, description } = singleData || {};
+  const handleAddTOCart = () =>{
+    
+    fetch(`http://localhost:5000/carts`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(singleData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Add to cart Successfully ',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+            console.log(data);
+        }
+    })
+  }
+
 
   return (
     <div>
@@ -18,7 +42,7 @@ const Details = () => {
             <h2 className="card-title font-bold text-center my-6">{name}</h2>
 
             <div className="">
-            <button
+            <button onClick={handleAddTOCart}
               type="button"
               className="text-white bg-blue-600 hover:bg-blue-700 btn">
              Add to Cart
