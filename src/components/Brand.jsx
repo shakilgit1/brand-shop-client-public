@@ -7,7 +7,7 @@ const Brand = () => {
     const brands = useLoaderData();
     const {banner1, banner2, banner3} = brands;
     const [allData, setAllData] = useState([]);
-    console.log(allData);
+    // console.log(allData);
     // console.log(brand);
     
     useEffect(() =>{
