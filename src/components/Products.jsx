@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Products = ({ item }) => {
-  const { _id, name, brand, type, description, image, price, rating } =
+  const { _id, name, brand, type, image, price, rating } =
     item || {};
+
   return (
     <div>
       <div className="w-96 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -84,10 +85,10 @@ const Products = ({ item }) => {
           </div>
           <div className="items-center gap-8 flex">
            
-            <Link to=''>
+            <Link to={`/details/${_id}`}>
               <button className="btn btn-info">Details</button>
             </Link>
-            <Link to=''>
+            <Link to={`/update/${_id}`}>
               <button className="btn btn-success">Update</button>
             </Link>
           </div>
