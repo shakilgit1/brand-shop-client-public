@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/brands')
+          loader: () => fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/brands')
         },
         {
           path: '/addproduct',
@@ -28,12 +28,12 @@ const router = createBrowserRouter([
         {
           path: '/mycart',
           element: <MyCart></MyCart>,
-          loader: () => fetch('http://localhost:5000/carts')
+          loader: () => fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts')
         },
         {
           path: '/brands/:id',
           element: <Brand></Brand>,
-          loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
+          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/brands/${params.id}`)
         },
         {
           path: '/login',
@@ -46,11 +46,12 @@ const router = createBrowserRouter([
         {
           path: '/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`http://localhost:5000/technologies/${params.id}`)
+          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
         },
         {
           path: '/update/:id',
-          element: <Update/>
+          element: <Update/>,
+          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
         }
       ]
     },

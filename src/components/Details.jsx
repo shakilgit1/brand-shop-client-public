@@ -8,7 +8,7 @@ const Details = () => {
   const singleData = useLoaderData();
  
   // useEffect(() =>{
-  //   fetch('http://localhost:5000/carts')
+  //   fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts')
   //   .then(res  => res.json())
   //   .then(data => {
   //      const filterData = data.find(add => add._id === singleData._id);
@@ -27,7 +27,7 @@ const Details = () => {
 
   const handleAddTOCart = () =>{
     
-    fetch(`http://localhost:5000/carts`, {
+    fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
