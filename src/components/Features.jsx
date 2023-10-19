@@ -1,8 +1,8 @@
 
 const Features = () => {
     return (
-        <div>
-            <div className="mx-auto container my-20 px-6">
+        <div style={{backgroundImage: 'url(https://i.ibb.co/fQDtqDh/210811092029-1-samsung-galaxy-unpacked-family-cnn-underscored.jpg)'}}>
+        <div  className="mx-auto container my-20 px-6 hero-overlay bg-black bg-opacity-80 text-white ">
       <h2
         data-aos="fade-down"
         className="text-5xl text-center mb-4 font-semibold"
@@ -23,7 +23,7 @@ const Features = () => {
              <div className="flex justify-center">
              <img className="w-1/12 hover:scale-[1.05] duration-1000" src="https://i.ibb.co/TrT7mSd/186239.png" alt="" />
              </div>
-            <h2 className="text-2xl text-center">Mobile Phones</h2>
+            <h2 className="text-2xl text-center text-blue-600 font-bold">Mobile Phones</h2>
             <p className="text-center">
             Smartphones often referred to as <br /> smart mobile phones are cutting-edge <br /> mobile devices that have revolutionized, <br />communicate, work, and stay connected.
             </p>
@@ -32,7 +32,7 @@ const Features = () => {
           <div className="flex justify-center">
              <img className="w-1/12 hover:scale-[1.05] duration-1000" src="https://i.ibb.co/TW7bvVh/images.png" alt="" />
              </div>
-            <h2 className="text-2xl text-center">Laptop</h2>
+            <h2 className="text-2xl text-center text-blue-600 font-bold">Laptop</h2>
             <p className="text-center">
             Laptops are designed to be lightweight <br /> and compact, making them easy to carry around. <br /> They are an excellent choice for <br /> individuals who need a computer.
             </p>
@@ -44,7 +44,7 @@ const Features = () => {
           <div className="flex justify-center">
              <img className="w-1/12 hover:scale-[1.05] duration-1000" src="https://i.ibb.co/h8yChGm/png-transparent-wireless-router-computer-icons-router-computer-network-rectangle-wireless-network-th.pnghttps://i.ibb.co/TrT7mSd/186239.png" alt="" />
              </div>
-            <h2 className="text-2xl text-center">Router</h2>
+            <h2 className="text-2xl text-center text-blue-600 font-bold">Router</h2>
             <p className="text-center ">
             A router is a fundamental networking <br /> device that plays a crucial role in directing data <br /> traffic between different devices <br /> on a network, such as computers.
             </p>
@@ -53,14 +53,14 @@ const Features = () => {
           <div className="flex justify-center">
              <img className="w-1/12 hover:scale-[1.05] duration-1000" src="https://i.ibb.co/17z958s/1170688.png" alt="" />
              </div>
-            <h2 className="text-2xl text-center">Tv and Monitor</h2>
+            <h2 className="text-2xl text-center text-blue-600 font-bold">Tv and Monitor</h2>
             <p className="text-center">
             TV and a computer monitor is their <br /> intended use and the features associated <br /> with that use. TVs are optimized for consuming <br /> video content and exciting features <br /> .
             </p>
           </div>
         </div>
       </div>
-    </div>
+        </div>
         </div>
     );
 };

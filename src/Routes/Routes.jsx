@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/brands')
+          loader: () => fetch('https://brand-shop-server-rosy.vercel.app/brands')
         },
         {
           path: '/addproduct',
@@ -29,12 +29,12 @@ const router = createBrowserRouter([
         {
           path: '/mycart',
           element: <PrivetRoutes><MyCart></MyCart></PrivetRoutes>,
-          loader: () => fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts')
+          loader: () => fetch('https://brand-shop-server-rosy.vercel.app/carts')
         },
         {
           path: '/brands/:id',
           element: <Brand></Brand>,
-          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/brands/${params.id}`)
+          loader: ({params}) => fetch(`https://brand-shop-server-rosy.vercel.app/brands/${params.id}`)
         },
         {
           path: '/login',
@@ -47,12 +47,12 @@ const router = createBrowserRouter([
         {
           path: '/details/:id',
           element: <PrivetRoutes><Details></Details></PrivetRoutes>,
-          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
+          loader: ({params}) => fetch(`https://brand-shop-server-rosy.vercel.app/technologies/${params.id}`)
         },
         {
           path: '/update/:id',
           element: <PrivetRoutes><Update/></PrivetRoutes>,
-          loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
+          loader: ({params}) => fetch(`https://brand-shop-server-rosy.vercel.app/technologies/${params.id}`)
         }
       ]
     },

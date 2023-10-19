@@ -11,7 +11,7 @@ const Brand = () => {
     // console.log(brand);
     
     useEffect(() =>{
-        fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies')
+        fetch('https://brand-shop-server-rosy.vercel.app/technologies')
         .then(res => res.json())
         .then(data => {
             const dataFilter = data.filter(item => item.brand.toLowerCase() === brands.brand.toLowerCase());

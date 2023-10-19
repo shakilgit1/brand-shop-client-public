@@ -12,7 +12,7 @@ const Details = () => {
 
   const handleAddTOCart = () =>{
     
-    fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts`, {
+    fetch(`https://brand-shop-server-rosy.vercel.app/carts`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
