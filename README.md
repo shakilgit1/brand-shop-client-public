@@ -1,4 +1,7 @@
-# [Hi Tek](https://brand-shop-website.web.app/)
+## Website Name: Hi Tek
+# website link : 
+https://brand-shop-website.web.app/
+
 
 ## Here are some features of my project
 
