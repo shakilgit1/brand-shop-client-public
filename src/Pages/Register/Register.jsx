@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // import { useEffect } from "react";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, profileUpdate} = useContext(AuthContext);
     const navigate = useNavigate();
 
     // useEffect(() => {
@@ -18,9 +18,9 @@ const Register = () => {
 
     const handleRegister = (e) =>{
         e.preventDefault();
-        // const name = e.target.name.value;
+        const name = e.target.name.value;
         const email = e.target.email.value;
-        // const photo = e.target.photoURL.value;
+        const photo = e.target.photoURL.value;
         const password = e.target.password.value;
         // console.log(name, email, photo, password);
 
@@ -37,6 +37,13 @@ const Register = () => {
         else{
           createUser(email, password)
           .then(() => {
+            profileUpdate(name, photo)
+            .then(result =>{
+              console.log(result);
+            })
+            .catch(error => {
+              console.log(error);
+            })
               // console.log(res.user);
               e.target.reset();
               navigate('/');

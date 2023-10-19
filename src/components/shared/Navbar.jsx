@@ -6,7 +6,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
 
   const {user, logOut} = useContext(AuthContext);
-
+  // console.log(user?.displayName);
   const handleLogOut = () =>{
    logOut()
    .then(() =>{
@@ -74,7 +74,7 @@ const Navbar = () => {
           </> :
             <Link to="/login" className="btn">Login</Link>
           }
-        {/* <Link to="/login"><button className="btn">Log In</button></Link> */}
+        
       </div>
     </div>
   );
