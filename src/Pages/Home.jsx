@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import HomepageBanner from "../components/HomepageBanner";
 import BrandsCard from "../components/BrandsCard";
+import Features from "../components/Features";
+import Choose from "../components/Choose";
 
 const Home = () => {
     const allData = useLoaderData();
@@ -17,6 +19,13 @@ const Home = () => {
               allData?.map(item => <BrandsCard key={item._id} item={item}></BrandsCard>)
             }
         </div>
+      </div>
+
+      <div>
+        <Features></Features>
+      </div>
+      <div>
+        <Choose></Choose>
       </div>
     </div>
   );

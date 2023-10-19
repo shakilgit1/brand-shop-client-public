@@ -7,21 +7,6 @@ const Details = () => {
   const {user} = useContext(AuthContext);
   const singleData = useLoaderData();
  
-  // useEffect(() =>{
-  //   fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts')
-  //   .then(res  => res.json())
-  //   .then(data => {
-  //      const filterData = data.find(add => add._id === singleData._id);
-  //      if(filterData){
-  //       setFindData(true);
-        
-  //      }else{
-  //       console.log('not found');
-  //      }
-  //      console.log(filterData);
-      
-  //   })
-  // }, [])
 
   const { _id, name, brand, type, image, price, description, rating } = singleData || {};
 
