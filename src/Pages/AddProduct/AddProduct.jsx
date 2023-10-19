@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
+
   const handleAddProduct = e =>{
     e.preventDefault();
     const form  = e.target;

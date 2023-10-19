@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -6,7 +6,23 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const Details = () => {
   const {user} = useContext(AuthContext);
   const singleData = useLoaderData();
-//   console.log(singleData);
+ 
+  // useEffect(() =>{
+  //   fetch('http://localhost:5000/carts')
+  //   .then(res  => res.json())
+  //   .then(data => {
+  //      const filterData = data.find(add => add._id === singleData._id);
+  //      if(filterData){
+  //       setFindData(true);
+        
+  //      }else{
+  //       console.log('not found');
+  //      }
+  //      console.log(filterData);
+      
+  //   })
+  // }, [])
+
   const { _id, name, brand, type, image, price, description, rating } = singleData || {};
 
   const handleAddTOCart = () =>{
