@@ -9,6 +9,7 @@ import Brand from "../components/Brand";
 import Register from "../Pages/Register/Register";
 import Details from "../components/Details";
 import Update from "../components/Update";
+import PrivetRoutes from "../PrivetRoute/PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -23,11 +24,11 @@ const router = createBrowserRouter([
         },
         {
           path: '/addproduct',
-          element: <AddProduct></AddProduct>
+          element: <PrivetRoutes><AddProduct></AddProduct></PrivetRoutes>
         },
         {
           path: '/mycart',
-          element: <MyCart></MyCart>,
+          element: <PrivetRoutes><MyCart></MyCart></PrivetRoutes>,
           loader: () => fetch('https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/carts')
         },
         {
@@ -45,12 +46,12 @@ const router = createBrowserRouter([
         },
         {
           path: '/details/:id',
-          element: <Details></Details>,
+          element: <PrivetRoutes><Details></Details></PrivetRoutes>,
           loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
         },
         {
           path: '/update/:id',
-          element: <Update/>,
+          element: <PrivetRoutes><Update/></PrivetRoutes>,
           loader: ({params}) => fetch(`https://brand-shop-server-av2rh2emg-shakils-projects.vercel.app/technologies/${params.id}`)
         }
       ]
