@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { MdBedtime } from "react-icons/md";
 
 const Navbar = () => {
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const {user, logOut} = useContext(AuthContext);
+  const {user, logOut, isDarkMode, setIsDarkMode} = useContext(AuthContext);
+
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   // console.log(user?.displayName);
   const handleLogOut = () =>{
    logOut()
@@ -33,7 +41,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div  className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -67,6 +75,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <button onClick={toggleTheme} className="btn mr-2"><MdBedtime/></button>
       {user ? <>
             <p>{user.displayName}</p>
             <img className="w-12 rounded-full ml-2" src={user.photoURL} alt="" />
