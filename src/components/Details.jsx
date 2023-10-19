@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Details = () => {
+  const {user} = useContext(AuthContext);
   const singleData = useLoaderData();
 //   console.log(singleData);
   const { _id, name, brand, type, image, price, description, rating } = singleData || {};
@@ -13,7 +16,7 @@ const Details = () => {
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(singleData)
+        body: JSON.stringify({...singleData, email: user.email})
     })
     .then(res => res.json())
     .then(data => {

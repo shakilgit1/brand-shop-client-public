@@ -1,7 +1,36 @@
+import Swal from "sweetalert2";
 
-const Cart = ({cart}) => {
-    console.log(cart);
-    const { _id, name, brand, type, image, price, description, rating } = cart || {};
+const Cart = ({cart, cartItem, setCartItem}) => {
+    // console.log(cart);
+    const { _id, name, brand, type, image, price, rating } = cart || {};
+
+    const handleDelete = (_id) =>{
+
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/carts/${_id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
+                const remaining = cartItem.filter(item => item._id !== _id);
+                setCartItem(remaining);
+              }
+            });
+        }
+      }); 
+    }
 
     return (
         <div>
@@ -84,7 +113,7 @@ const Cart = ({cart}) => {
           </div>
           <div className="items-center gap-8 flex">
 
-          <button className="btn btn-success">Delete</button>
+          <button onClick={() => handleDelete(_id)} className="btn btn-error">Delete</button>
            
           </div>
         </div>
